@@ -1,42 +1,44 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>项目中的一些问题 by hanl754</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" href="stylesheets/github-dark.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/hanl754/issue">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/hanl754/issue/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/hanl754/issue/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-  <title>项目中的一些问题</title>
-  <meta name="description" content="ConcurrentModificationException">
+    <div class="wrapper">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">项目中的一些问题</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">ConcurrentModificationException</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/hanl754/hanl754.issue/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/hanl754/hanl754.issue/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/hanl754/hanl754.issue" class="code">View 项目中的一些问题 on GitHub</a>
+      <section>
+        <div id="title">
+          <h1>项目中的一些问题</h1>
+          <p>ConcurrentModificationException</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/hanl754">hanl754</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h2>
+
+        <h2>
 <a id="今天在项目中报出concurrentmodificationexception参考httpstackoverflowcomquestions8189466java-util-concurrentmodificationexception总结一下这个问题出现的原因以及我的解决方法" class="anchor" href="#%E4%BB%8A%E5%A4%A9%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8A%A5%E5%87%BAconcurrentmodificationexception%E5%8F%82%E8%80%83httpstackoverflowcomquestions8189466java-util-concurrentmodificationexception%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%E5%87%BA%E7%8E%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%BB%A5%E5%8F%8A%E6%88%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>今天在项目中报出<code>ConcurrentModificationException</code>。参考<a href="http://stackoverflow.com/questions/8189466/java-util-concurrentmodificationexception">http://stackoverflow.com/questions/8189466/java-util-concurrentmodificationexception</a>总结一下这个问题出现的原因以及我的解决方法。</h2>
 
 <h3>
@@ -94,26 +96,10 @@
 <p>如果在iterator进行迭代的时候进行collection的删操作，采用iterator.remove()方法是安全的。如果要增加元素的话，可以使用一份副本进行操作。</p>
 
 <p>第一次写，有错请指正！</p>
-        </article>
-      </div>
+      </section>
+
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/hanl754" class="avatar"><img src="https://avatars1.githubusercontent.com/u/8143555?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/hanl754">hanl754</a> maintains <a href="https://github.com/hanl754/hanl754.issue">项目中的一些问题</a></p>
-
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/hanl754/hanl754.issue/tarball/master" class="tar">tar</a><a href="https://github.com/hanl754/hanl754.issue/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>
