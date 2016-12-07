@@ -1,50 +1,31 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>项目中的一些问题 by hanl754</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/hanl754/issue">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/hanl754/issue/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/hanl754/issue/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">项目中的一些问题</h1>
+      <h2 class="project-tagline">ConcurrentModificationException</h2>
+      <a href="https://github.com/hanl754/issue" class="btn">View on GitHub</a>
+      <a href="https://github.com/hanl754/issue/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/hanl754/issue/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>项目中的一些问题</h1>
-          <p>ConcurrentModificationException</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/hanl754">hanl754</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h2>
-<a id="今天在项目中报出concurrentmodificationexception参考httpstackoverflowcomquestions8189466java-util-concurrentmodificationexception总结一下这个问题出现的原因以及我的解决方法" class="anchor" href="#%E4%BB%8A%E5%A4%A9%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8A%A5%E5%87%BAconcurrentmodificationexception%E5%8F%82%E8%80%83httpstackoverflowcomquestions8189466java-util-concurrentmodificationexception%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%E5%87%BA%E7%8E%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%BB%A5%E5%8F%8A%E6%88%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>今天在项目中报出<code>ConcurrentModificationException</code>。参考<a href="http://stackoverflow.com/questions/8189466/java-util-concurrentmodificationexception">http://stackoverflow.com/questions/8189466/java-util-concurrentmodificationexception</a>总结一下这个问题出现的原因以及我的解决方法。</h2>
+    <section class="main-content">
+      <h2>
+<a id="今天在项目中报出concurrentmodificationexception参考httpstackoverflowcomquestions8189466java-util-concurrentmodificationexception总结一下这个问题出现的原因以及我的解决方法" class="anchor" href="#%E4%BB%8A%E5%A4%A9%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8A%A5%E5%87%BAconcurrentmodificationexception%E5%8F%82%E8%80%83httpstackoverflowcomquestions8189466java-util-concurrentmodificationexception%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%E5%87%BA%E7%8E%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%BB%A5%E5%8F%8A%E6%88%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>今天在项目中报出<code>ConcurrentModificationException</code>。参考<a href="http://stackoverflow.com/questions/8189466/java-util-concurrentmodificationexception">http://stackoverflow.com/questions/8189466/java-util-concurrentmodificationexception</a>总结一下这个问题出现的原因以及我的解决方法。</h2>
 
 <h3>
-<a id="问题代码demo" class="anchor" href="#%E9%97%AE%E9%A2%98%E4%BB%A3%E7%A0%81demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>问题代码demo：</h3>
+<a id="问题代码demo" class="anchor" href="#%E9%97%AE%E9%A2%98%E4%BB%A3%E7%A0%81demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>问题代码demo：</h3>
 
-<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">RemoveListElementDemo</span> {
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">RemoveListElementDemo</span> {
     <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-k">List&lt;<span class="pl-smi">Integer</span>&gt;</span> integerList;
     <span class="pl-k">static</span> {
         integerList <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-k">ArrayList&lt;<span class="pl-smi">Integer</span>&gt;</span>();
@@ -59,8 +40,10 @@
             }
         }
     }
-    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-smi">String</span> <span class="pl-v">args</span>[]) {                
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-smi">String</span> <span class="pl-v">args</span>[]) { 
+        <span class="pl-c">//ok       </span>
         remove(<span class="pl-c1">2</span>);
+        <span class="pl-c">//java.util.ConcurrentModificationException</span>
         remove(<span class="pl-c1">3</span>);      
     }
 }</pre></div>
@@ -68,7 +51,7 @@
 <p>发现remove(2)没有问题但是下面删除3的时候报了<code>ConcurrentModificationException</code> 。</p>
 
 <h3>
-<a id="分析" class="anchor" href="#%E5%88%86%E6%9E%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析：</h3>
+<a id="分析" class="anchor" href="#%E5%88%86%E6%9E%90" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>分析：</h3>
 
 <p>原因：</p>
 
@@ -79,7 +62,7 @@
 <li>当<code>iterator.hasNext()</code>为真时会调用next()方法，而hasNext()方法的内部逻辑是</li>
 </ul>
 
-<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">boolean</span> hasNext() {
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">boolean</span> hasNext() {
      <span class="pl-k">return</span> cursor <span class="pl-k">!=</span> size();
 }</pre></div>
 
@@ -91,15 +74,20 @@
 </ul>
 
 <h3>
-<a id="问题解决" class="anchor" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3" aria-hidden="true"><span class="octicon octicon-link"></span></a>问题解决：</h3>
+<a id="问题解决" class="anchor" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>问题解决：</h3>
 
 <p>如果在iterator进行迭代的时候进行collection的删操作，采用iterator.remove()方法是安全的。如果要增加元素的话，可以使用一份副本进行操作。</p>
 
 <p>第一次写，有错请指正！</p>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/hanl754/issue">项目中的一些问题</a> is maintained by <a href="https://github.com/hanl754">hanl754</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
